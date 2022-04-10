@@ -1,5 +1,6 @@
 package com.biz.mesapp.HelloRESTAPIMessagingApp.controller;
 
+import com.biz.mesapp.HelloRESTAPIMessagingApp.entity.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,5 +14,11 @@ public class HelloMessages {
     @RequestMapping(value = {"query","\n","/"})
     public String printUsingQueryHello(@RequestParam(value = "name") String name){
         return "Hello "+name+" from Bridgelabz";
+    }
+
+    @PutMapping( "/put/{firstName}")
+    public String sayHello ( @PathVariable String firstName,
+                             @RequestParam(value = "lastname") String lastName) {
+        return "Hello" + firstName + " " + lastName+ " !";
     }
 }

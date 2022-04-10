@@ -9,4 +9,9 @@ public class HelloMessages {
     public String printHello(){
         return "Hello from Bridgelabz";
     }
+
+    @RequestMapping(value = {"query","\n","/"})
+    public String printUsingQueryHello(@RequestParam(value = "name") String name){
+        return "Hello "+name+" from Bridgelabz";
+    }
 }

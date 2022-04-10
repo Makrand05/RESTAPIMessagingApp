@@ -21,4 +21,9 @@ public class HelloMessages {
                              @RequestParam(value = "lastname") String lastName) {
         return "Hello" + firstName + " " + lastName+ " !";
     }
+    @PostMapping("/post")
+    public String sayHello(@RequestBody User user){
+        return "hello "+user.getFirstName()+" "+user.getLastName()+"!";
+    }
+
 }
